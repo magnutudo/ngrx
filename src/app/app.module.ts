@@ -14,11 +14,12 @@ import { AppEffects } from './app.effects';
   ],
   imports: [
     BrowserModule,
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+
     EffectsModule.forRoot([AppEffects]),
     StoreModule.forRoot(reducers, {
       metaReducers
-    })
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   providers: [],
   bootstrap: [AppComponent]
